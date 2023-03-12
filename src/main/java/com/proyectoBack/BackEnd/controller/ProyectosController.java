@@ -52,7 +52,7 @@ public class ProyectosController {
         if(StringUtils.isBlank(dtoProyectos.getDescripcion()))
             return new ResponseEntity(new Mensaje("La descripción es obligatoria"), HttpStatus.BAD_REQUEST);
         
-        Proyectos proyectos = new Proyectos(dtoProyectos.getNombre(), dtoProyectos.getDescripcion(), dtoProyectos.getImg());
+        Proyectos proyectos = new Proyectos(dtoProyectos.getNombre(), dtoProyectos.getDescripcion());
         sProyectos.save(proyectos);
         
         return new ResponseEntity(new Mensaje("Proyecto agregado"), HttpStatus.OK);
@@ -67,7 +67,6 @@ public class ProyectosController {
         Proyectos proyectos = sProyectos.getOne(id).get();
         proyectos.setNombre(dtoProyectos.getNombre());
         proyectos.setDescripcion(dtoProyectos.getDescripcion());
-        proyectos.setDescripcion(dtoProyectos.getImg());
         
         sProyectos.save(proyectos);
         return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);

@@ -13,15 +13,13 @@ public class DtoProyectos {
     @NotBlank
     private String descripcion;
    
-    private String img;
 
     public DtoProyectos() {
     }
 
-    public DtoProyectos(String nombre, String descripcion, String img) {
+    public DtoProyectos(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.img = img;
     }
 
     public String getNombre() {
@@ -40,11 +38,5 @@ public class DtoProyectos {
         this.descripcion = descripcion;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
+  
 }
