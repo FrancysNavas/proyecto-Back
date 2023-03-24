@@ -4,13 +4,18 @@
  */
 package com.proyectoBack.BackEnd.entity;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
-public class Educacion {
+@Table(name = "educacion")
+public class Educacion implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,29 +31,4 @@ public class Educacion {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombreE() {
-        return nombreE;
-    }
-
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
-    }
-
-    public String getDescripcionE() {
-        return descripcionE;
-    }
-
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
-    }
-    
 }
